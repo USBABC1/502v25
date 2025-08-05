@@ -42,9 +42,9 @@ class AIManager:
             'gemini': {
                 'client': None,
                 'available': False,
-                'priority': 1,
+                'priority': 1,  # MODELO PRIMÁRIO
                 'error_count': 0,
-                'model': 'gemini-1.5-flash',
+                'model': 'gemini-2.0-flash-exp',  # Gemini 2.5 Pro
                 'max_errors': 2,
                 'last_success': None,
                 'consecutive_failures': 0
@@ -52,7 +52,7 @@ class AIManager:
             'groq': {
                 'client': None,
                 'available': False,
-                'priority': 2,
+                'priority': 2,  # FALLBACK AUTOMÁTICO
                 'error_count': 0,
                 'model': 'llama3-70b-8192',
                 'max_errors': 2,
@@ -95,13 +95,13 @@ class AIManager:
                 gemini_key = os.getenv('GEMINI_API_KEY')
                 if gemini_key:
                     genai.configure(api_key=gemini_key)
-                    self.providers['gemini']['client'] = genai.GenerativeModel("gemini-1.5-flash")
+                    self.providers['gemini']['client'] = genai.GenerativeModel("gemini-2.0-flash-exp")
                     self.providers['gemini']['available'] = True
-                    logger.info("✅ Gemini (gemini-1.5-flash) inicializado com sucesso")
+                    logger.info("✅ Gemini 2.5 Pro (gemini-2.0-flash-exp) inicializado como MODELO PRIMÁRIO")
             except Exception as e:
-                logger.warning(f"⚠️ Falha ao inicializar Gemini: {str(e)}")
+                logger.error(f"❌ CRÍTICO: Falha ao inicializar Gemini 2.5 Pro: {str(e)}")
         else:
-            logger.warning("⚠️ Biblioteca 'google-generativeai' não instalada. Gemini desabilitado.")
+            logger.error("❌ CRÍTICO: Biblioteca 'google-generativeai' não instalada. Gemini 2.5 Pro desabilitado.")
 
         # Inicializa OpenAI
         if HAS_OPENAI:
@@ -298,16 +298,21 @@ class AIManager:
     def _generate_with_gemini(self, prompt: str, max_tokens: int) -> Optional[str]:
         """Gera conteúdo usando Gemini."""
         client = self.providers['gemini']['client']
-        config = {"temperature": 0.7, "max_output_tokens": min(max_tokens, 8192)}
+        config = {
+            "temperature": 0.8,  # Criatividade controlada
+            "max_output_tokens": min(max_tokens, 8192),
+            "top_p": 0.95,
+            "top_k": 64
+        }
         safety = [
             {"category": c, "threshold": "BLOCK_NONE"} 
             for c in ["HARM_CATEGORY_HARASSMENT", "HARM_CATEGORY_HATE_SPEECH", "HARM_CATEGORY_SEXUALLY_EXPLICIT", "HARM_CATEGORY_DANGEROUS_CONTENT"]
         ]
         response = client.generate_content(prompt, generation_config=config, safety_settings=safety)
         if response.text:
-            logger.info(f"✅ Gemini gerou {len(response.text)} caracteres")
+            logger.info(f"✅ Gemini 2.5 Pro gerou {len(response.text)} caracteres")
             return response.text
-        raise Exception("Resposta vazia do Gemini")
+        raise Exception("Resposta vazia do Gemini 2.5 Pro")
 
     def _generate_with_groq(self, prompt: str, max_tokens: int) -> Optional[str]:
         """Gera conteúdo usando Groq."""

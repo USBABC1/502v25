@@ -33,19 +33,19 @@ class ProgressTracker:
         self.total_steps = 13
         self.start_time = time.time()
         self.steps = [
-            "🔍 Coletando dados do formulário",
-            "📊 Processando anexos inteligentes", 
-            "🌐 Realizando pesquisa profunda massiva",
-            "🧠 Analisando com múltiplas IAs",
-            "👤 Criando avatar arqueológico completo",
-            "🧠 Gerando drivers mentais customizados",
-            "🎭 Desenvolvendo provas visuais instantâneas",
-            "🛡️ Construindo sistema anti-objeção",
-            "🎯 Arquitetando pré-pitch invisível",
-            "⚔️ Mapeando concorrência profunda",
-            "📈 Calculando métricas e projeções",
-            "🔮 Predizendo futuro do mercado",
-            "✨ Consolidando insights exclusivos"
+            "🔍 Validando dados de entrada e preparando análise",
+            "🌐 Executando pesquisa web massiva com WebSailor",
+            "📄 Extraindo conteúdo de fontes preferenciais",
+            "🤖 Analisando com Gemini 2.5 Pro (modelo primário)",
+            "👤 Criando avatar arqueológico ultra-detalhado",
+            "🧠 Gerando drivers mentais customizados (19 universais)",
+            "🎭 Desenvolvendo provas visuais instantâneas (PROVIs)",
+            "🛡️ Construindo sistema anti-objeção psicológico",
+            "🎯 Arquitetando pré-pitch invisível completo",
+            "⚔️ Mapeando concorrência e posicionamento",
+            "📈 Calculando métricas forenses e projeções",
+            "🔮 Predizendo futuro do mercado (36 meses)",
+            "✨ Consolidando análise arqueológica final"
         ]
         self.detailed_logs = []
         

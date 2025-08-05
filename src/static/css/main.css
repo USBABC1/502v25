@@ -1,5 +1,8 @@
 /* ARQV30 Enhanced v2.0 - Neumorphic Dark UI */
 
+/* Importa fonte profissional */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
+
 /* Reset and Base Styles */
 * {
     margin: 0;
@@ -8,41 +11,51 @@
 }
 
 :root {
-    /* Neumorphic Dark Color Palette */
-    --bg-primary: #1a1a1a;
-    --bg-secondary: #1e1e1e;
-    --bg-tertiary: #222222;
-    --bg-surface: #252525;
+    /* Neumorphic Professional Dark Palette */
+    --bg-primary: #0f0f0f;
+    --bg-secondary: #1a1a1a;
+    --bg-tertiary: #1e1e1e;
+    --bg-surface: #222222;
     --bg-elevated: #2a2a2a;
+    --bg-card: #2d2d2d;
     
-    /* Accent Colors */
-    --accent-primary: #00d4ff;
-    --accent-secondary: #7c3aed;
-    --accent-tertiary: #06ffa5;
-    --accent-gold: #ffd700;
-    --accent-silver: #c0c0c0;
+    /* Professional Accent Colors */
+    --accent-primary: #00d4ff;    /* Cyan tech */
+    --accent-secondary: #8b5cf6;  /* Purple premium */
+    --accent-tertiary: #10b981;   /* Green success */
+    --accent-gold: #f59e0b;       /* Gold warning */
+    --accent-red: #ef4444;        /* Red error */
+    --accent-blue: #3b82f6;       /* Blue info */
     
-    /* Text Colors */
+    /* Professional Text Colors */
     --text-primary: #ffffff;
-    --text-secondary: #b8bcc8;
-    --text-muted: #6b7280;
+    --text-secondary: #d1d5db;
+    --text-muted: #9ca3af;
     --text-accent: #00d4ff;
+    --text-success: #10b981;
+    --text-warning: #f59e0b;
+    --text-error: #ef4444;
     
-    /* Neumorphic Shadows - Soft and Subtle */
-    --shadow-inset: inset 6px 6px 12px rgba(0, 0, 0, 0.8), inset -6px -6px 12px rgba(255, 255, 255, 0.02);
-    --shadow-outset: 6px 6px 12px rgba(0, 0, 0, 0.8), -6px -6px 12px rgba(255, 255, 255, 0.02);
-    --shadow-pressed: inset 8px 8px 16px rgba(0, 0, 0, 0.9), inset -8px -8px 16px rgba(255, 255, 255, 0.01);
-    --shadow-floating: 0 20px 40px rgba(0, 0, 0, 0.9), 0 8px 16px rgba(0, 0, 0, 0.6);
-    --shadow-subtle: 3px 3px 6px rgba(0, 0, 0, 0.6), -3px -3px 6px rgba(255, 255, 255, 0.01);
+    /* Professional Neumorphic Shadows */
+    --shadow-inset: inset 8px 8px 16px rgba(0, 0, 0, 0.9), inset -8px -8px 16px rgba(255, 255, 255, 0.03);
+    --shadow-outset: 8px 8px 16px rgba(0, 0, 0, 0.9), -8px -8px 16px rgba(255, 255, 255, 0.03);
+    --shadow-pressed: inset 12px 12px 24px rgba(0, 0, 0, 0.95), inset -12px -12px 24px rgba(255, 255, 255, 0.02);
+    --shadow-floating: 0 25px 50px rgba(0, 0, 0, 0.95), 0 12px 24px rgba(0, 0, 0, 0.8);
+    --shadow-subtle: 4px 4px 8px rgba(0, 0, 0, 0.8), -4px -4px 8px rgba(255, 255, 255, 0.02);
+    --shadow-glow: 0 0 20px rgba(0, 212, 255, 0.3);
     
-    /* Gradients - Subtle */
+    /* Professional Gradients */
     --gradient-primary: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-secondary) 100%);
-    --gradient-surface: linear-gradient(145deg, var(--bg-elevated) 0%, var(--bg-surface) 100%);
+    --gradient-surface: linear-gradient(145deg, var(--bg-elevated) 0%, var(--bg-card) 100%);
     --gradient-button: linear-gradient(145deg, var(--bg-elevated) 0%, var(--bg-surface) 50%, var(--bg-elevated) 100%);
-    --gradient-neuro: linear-gradient(145deg, #2a2a2a 0%, #1e1e1e 50%, #2a2a2a 100%);
+    --gradient-neuro: linear-gradient(145deg, #2d2d2d 0%, #1a1a1a 50%, #2d2d2d 100%);
+    --gradient-success: linear-gradient(135deg, var(--accent-tertiary) 0%, #059669 100%);
+    --gradient-warning: linear-gradient(135deg, var(--accent-gold) 0%, #d97706 100%);
+    --gradient-error: linear-gradient(135deg, var(--accent-red) 0%, #dc2626 100%);
     
     /* Typography */
     --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
     --font-size-xs: 0.75rem;
     --font-size-sm: 0.875rem;
     --font-size-base: 1rem;
@@ -52,6 +65,7 @@
     --font-size-3xl: 1.875rem;
     --font-size-4xl: 2.25rem;
     --font-size-5xl: 3rem;
+    --font-size-6xl: 3.75rem;
     
     /* Spacing */
     --spacing-1: 0.25rem;
@@ -65,19 +79,23 @@
     --spacing-12: 3rem;
     --spacing-16: 4rem;
     --spacing-20: 5rem;
+    --spacing-24: 6rem;
+    --spacing-32: 8rem;
     
-    /* Border Radius - Soft */
+    /* Professional Border Radius */
     --radius-sm: 0.75rem;
     --radius-md: 1rem;
     --radius-lg: 1.25rem;
     --radius-xl: 1.5rem;
     --radius-2xl: 2rem;
+    --radius-3xl: 2.5rem;
     --radius-full: 9999px;
     
-    /* Transitions */
+    /* Professional Transitions */
     --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-normal: 300ms cubic-bezier(0.4, 0, 0.2, 1);
     --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 600ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 /* Base Styles */
@@ -225,30 +243,38 @@ body {
 /* Hero Section */
 .hero {
     text-align: center;
-    margin-bottom: var(--spacing-20);
+    margin-bottom: var(--spacing-24);
+    padding: var(--spacing-16) 0;
+    background: radial-gradient(ellipse at center, rgba(0, 212, 255, 0.05) 0%, transparent 70%);
 }
 
 .hero-content {
-    max-width: 900px;
+    max-width: 1000px;
     margin: 0 auto;
 }
 
 .hero-title {
-    font-size: var(--font-size-5xl);
-    font-weight: 800;
+    font-size: var(--font-size-6xl);
+    font-weight: 900;
     margin-bottom: var(--spacing-6);
     line-height: 1.1;
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    text-shadow: 0 0 30px rgba(0, 212, 255, 0.3);
+    letter-spacing: -0.02em;
 }
 
 .hero-subtitle {
-    font-size: var(--font-size-xl);
+    font-size: var(--font-size-2xl);
     color: var(--text-secondary);
     margin-bottom: var(--spacing-12);
-    font-weight: 300;
+    font-weight: 400;
+    line-height: 1.4;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-features {
@@ -263,32 +289,37 @@ body {
     flex-direction: column;
     align-items: center;
     gap: var(--spacing-4);
-    padding: var(--spacing-8);
+    padding: var(--spacing-10);
     background: var(--bg-elevated);
-    border-radius: var(--radius-2xl);
+    border-radius: var(--radius-3xl);
     box-shadow: var(--shadow-outset);
-    transition: all var(--transition-normal);
+    transition: all var(--transition-bounce);
     position: relative;
     overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .feature:hover {
-    box-shadow: var(--shadow-pressed);
-    transform: translateY(2px);
+    box-shadow: var(--shadow-floating), var(--shadow-glow);
+    transform: translateY(-8px) scale(1.02);
+    border-color: var(--accent-primary);
 }
 
 .feature i {
-    font-size: var(--font-size-4xl);
+    font-size: var(--font-size-5xl);
     background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    filter: drop-shadow(0 0 10px rgba(0, 212, 255, 0.3));
 }
 
 .feature span {
-    font-weight: 600;
+    font-weight: 700;
     color: var(--text-primary);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-xl);
+    text-align: center;
+    line-height: 1.3;
 }
 
 /* Analysis Section */

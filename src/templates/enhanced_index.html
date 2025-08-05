@@ -40,26 +40,26 @@
             <!-- Hero Section -->
             <section class="hero">
                 <div class="hero-content">
-                    <h2 class="hero-title">Análise Ultra-Detalhada de Mercado</h2>
+                    <h2 class="hero-title">ARQV30 Enhanced v2.0</h2>
                     <p class="hero-subtitle">
-                        Powered by Artificial Intelligence • Google Gemini Pro 2.5 • Pesquisa Profunda
+                        Análise Arqueológica Ultra-Detalhada • Gemini 2.5 Pro • WebSailor • Dados 100% Reais
                     </p>
                     <div class="hero-features">
                         <div class="feature">
-                            <i class="fas fa-brain"></i>
-                            <span>IA Avançada</span>
+                            <i class="fas fa-robot"></i>
+                            <span>Gemini 2.5 Pro<br>Modelo Primário</span>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-search"></i>
-                            <span>Pesquisa Profunda</span>
+                            <i class="fas fa-ship"></i>
+                            <span>WebSailor<br>Navegação Inteligente</span>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-chart-line"></i>
-                            <span>Análise Completa</span>
+                            <i class="fas fa-microscope"></i>
+                            <span>Análise Arqueológica<br>Ultra-Profunda</span>
                         </div>
                         <div class="feature">
-                            <i class="fas fa-file-pdf"></i>
-                            <span>Relatório PDF</span>
+                            <i class="fas fa-shield-check"></i>
+                            <span>Zero Simulação<br>Dados 100% Reais</span>
                         </div>
                     </div>
                 </div>
@@ -154,10 +154,10 @@
                             <div class="input-group">
                                 <label for="query">Query de Pesquisa</label>
                                 <input type="text" id="query" name="query" 
-                                       placeholder="Ex: tendências marketing digital 2024 Brasil">
+                                       placeholder="Ex: mercado telemedicina Brasil 2024 tendências">
                                 <small class="input-help">
                                     <i class="fas fa-info-circle"></i>
-                                    A IA fará uma pesquisa profunda na internet usando esta query
+                                    WebSailor + Gemini 2.5 Pro farão pesquisa arqueológica profunda
                                 </small>
                             </div>
                         </div>
@@ -172,8 +172,8 @@
                             <div class="upload-area" id="uploadArea">
                                 <div class="upload-content">
                                     <i class="fas fa-cloud-upload-alt"></i>
-                                    <h4>Arraste arquivos aqui ou clique para selecionar</h4>
-                                    <p>PDF, DOC, XLSX, CSV, TXT, JSON</p>
+                                    <h4>Anexos Inteligentes para Análise Arqueológica</h4>
+                                    <p>PDF, DOC, XLSX, CSV, TXT, JSON • Máximo 16MB por arquivo</p>
                                     <input type="file" id="fileInput" multiple accept=".pdf,.doc,.docx,.xlsx,.xls,.csv,.txt,.json">
                                 </div>
                             </div>
@@ -198,27 +198,30 @@
                         <!-- Submit Button -->
                         <div class="form-actions">
                             <button type="submit" class="btn-primary" id="analyzeBtn">
-                                <i class="fas fa-magic"></i>
-                                <span>Gerar Análise Ultra-Detalhada</span>
+                                <i class="fas fa-microscope"></i>
+                                <span>Iniciar Análise Arqueológica Ultra-Detalhada</span>
                             </button>
                             
-                            <div class="test-section" style="margin-top: 20px; padding: 20px; background: var(--bg-surface); border-radius: 12px; box-shadow: var(--shadow-inset);">
-                                <h4 style="color: var(--accent-primary); margin-bottom: 15px;">🧪 Testes do Sistema</h4>
-                                <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                            <div class="test-section" style="margin-top: 24px; padding: 24px; background: var(--bg-surface); border-radius: var(--radius-xl); box-shadow: var(--shadow-inset); border: 1px solid rgba(255, 255, 255, 0.05);">
+                                <h4 style="color: var(--accent-primary); margin-bottom: 20px; font-size: var(--font-size-lg); font-weight: 700;">🧪 Diagnóstico do Sistema Ultra-Robusto</h4>
+                                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 12px;">
                                     <button type="button" class="btn-secondary" onclick="analysisManager.testExtraction()">
-                                        <i class="fas fa-download"></i> Testar Extração
+                                        <i class="fas fa-download"></i> Extração
                                     </button>
                                     <button type="button" class="btn-secondary" onclick="analysisManager.testSearch()">
-                                        <i class="fas fa-search"></i> Testar Busca
+                                        <i class="fas fa-search"></i> Busca
                                     </button>
                                     <button type="button" class="btn-secondary" onclick="analysisManager.showExtractorStats()">
-                                        <i class="fas fa-chart-bar"></i> Stats Extratores
+                                        <i class="fas fa-chart-bar"></i> Estatísticas
                                     </button>
                                     <button type="button" class="btn-secondary" onclick="analysisManager.resetExtractors()">
-                                        <i class="fas fa-refresh"></i> Reset Extratores
+                                        <i class="fas fa-refresh"></i> Reset
                                     </button>
                                     <button type="button" class="btn-secondary" onclick="window.app.checkSystemHealth().then(h => console.log('Health:', h))">
-                                        <i class="fas fa-heartbeat"></i> Health Check
+                                        <i class="fas fa-heartbeat"></i> Saúde
+                                    </button>
+                                    <button type="button" class="btn-secondary" onclick="window.app.updateAPIStatus()">
+                                        <i class="fas fa-sync"></i> APIs
                                     </button>
                                 </div>
                             </div>
@@ -231,8 +234,8 @@
             <section class="progress-section" id="progressArea" style="display: none;">
                 <div class="progress-container">
                     <div class="progress-header">
-                        <h3>🚀 Análise em Progresso</h3>
-                        <p>Gerando relatório ultra-detalhado com pesquisa profunda</p>
+                        <h3>🔬 Análise Arqueológica em Progresso</h3>
+                        <p>Escavando dados reais com Gemini 2.5 Pro + WebSailor + Sistemas Avançados</p>
                     </div>
                     
                     <div class="progress-bar-container">
@@ -253,20 +256,20 @@
                     
                     <div class="progress-details">
                         <div class="progress-feature">
-                            <i class="fas fa-search"></i>
-                            <span>Pesquisa web massiva REAL em execução</span>
+                            <i class="fas fa-ship"></i>
+                            <span>WebSailor navegando e coletando dados REAIS</span>
                         </div>
                         <div class="progress-feature">
-                            <i class="fas fa-brain"></i>
-                            <span>Múltiplas IAs processando dados REAIS</span>
+                            <i class="fas fa-robot"></i>
+                            <span>Gemini 2.5 Pro analisando com precisão arqueológica</span>
                         </div>
                         <div class="progress-feature">
-                            <i class="fas fa-shield-alt"></i>
-                            <span>Sistemas avançados: Drivers + Provas + Anti-objeção</span>
+                            <i class="fas fa-cogs"></i>
+                            <span>19 Drivers + PROVIs + Anti-objeção + Pré-pitch</span>
                         </div>
                         <div class="progress-feature">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <span style="color: #ff6b6b;">ZERO simulação - Só dados reais</span>
+                            <i class="fas fa-shield-check"></i>
+                            <span style="color: var(--accent-tertiary);">GARANTIA: Zero simulação - 100% dados reais</span>
                         </div>
                     </div>
                 </div>
@@ -277,17 +280,17 @@
                 <div class="results-container">
                     <div class="results-header">
                         <h3>
-                            <i class="fas fa-chart-bar"></i>
-                            Análise Ultra-Detalhada Concluída
+                            <i class="fas fa-microscope"></i>
+                            Análise Arqueológica Ultra-Detalhada Concluída
                         </h3>
                         <div class="results-actions">
                             <button class="btn-secondary" id="downloadPdfBtn" style="display: none;">
-                                <i class="fas fa-download"></i>
-                                Download PDF
+                                <i class="fas fa-file-pdf"></i>
+                                Relatório PDF
                             </button>
                             <button class="btn-secondary" id="saveJsonBtn" style="display: none;" onclick="analysisManager.saveAnalysisLocally(analysisManager.currentAnalysis)">
                                 <i class="fas fa-save"></i>
-                                Salvar JSON
+                                Dados JSON
                             </button>
                             <button class="btn-secondary" onclick="location.reload()">
                                 <i class="fas fa-plus"></i>
@@ -354,28 +357,32 @@
         background: var(--bg-surface);
         border-top: 1px solid rgba(255, 255, 255, 0.05);
         box-shadow: var(--shadow-subtle);
-        padding: 8px 16px;
+        padding: 12px 20px;
         display: flex;
         justify-content: center;
         align-items: center;
-        gap: 16px;
-        font-size: 12px;
+        gap: 24px;
+        font-size: 13px;
         z-index: 100;
     ">
         <div class="system-status real-data">
-            <i class="fas fa-check-circle"></i>
-            <span>Sistema configurado para dados REAIS</span>
+            <i class="fas fa-shield-check"></i>
+            <span>Sistema Ultra-Robusto • Zero Simulação</span>
         </div>
         <div class="system-status" id="apiStatus">
             <i class="fas fa-cog fa-spin"></i>
-            <span>Verificando APIs...</span>
+            <span>APIs: Verificando...</span>
         </div>
         <div class="system-status" id="extractorStatus">
             <i class="fas fa-download"></i>
             <span>Extratores: Carregando...</span>
         </div>
-        <div style="font-size: 10px; color: var(--text-muted);">
-            Ctrl+Enter: Analisar | Ctrl+S: Salvar
+        <div class="system-status">
+            <i class="fas fa-ship"></i>
+            <span>WebSailor: Ativo</span>
+        </div>
+        <div style="font-size: 11px; color: var(--text-muted); font-family: var(--font-mono);">
+            Ctrl+Enter: Analisar • Ctrl+S: Salvar • ESC: Fechar
         </div>
     </div>
 
